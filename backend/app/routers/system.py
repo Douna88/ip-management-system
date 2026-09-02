@@ -86,10 +86,10 @@ def reset_demo(current_user: SysUser = Depends(get_current_user)):
     try:
         db2.add(SysUser(
             username="admin", password_hash=hash_password("admin123"),
-            display_name="管理员", email="admin@sks.com", role="admin", status="active"))
+            display_name="管理员", email="admin@example.com", role="admin", status="active"))
         db2.add(SysUser(
             username="user", password_hash=hash_password("user1234"),
-            display_name="部门成员", email="user@sks.com", role="member", status="active"))
+            display_name="部门成员", email="user@example.com", role="member", status="active"))
         db2.commit()
     finally:
         db2.close()

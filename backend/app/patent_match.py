@@ -5,8 +5,8 @@
 2. Excel 导入时的 patent_id 自动关联（routers/import_export.py）
 
 奖金表里的 patent_name 经常是混合格式，例如：
-  - 纯英文名：BU2-Glider-System and Test
-  - 中文名 + 英文括注：基于xx的装置（BU5-sMA-RT 方法）
+  - 纯英文名：XYZ-2000 Motion Platform
+  - 中文名 + 英文括注：基于xx的装置（XYZ-2000 方法）
   - 多专利换行拼接：专利A\\n专利B
 匹配策略（三级）：
   1) 全名归一化后精确相等

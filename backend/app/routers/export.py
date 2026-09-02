@@ -425,7 +425,7 @@ def _bar_chart(labels, values, title="", width=400, height=200, horizontal=False
     d = Drawing(width, height)
     if horizontal:
         # 横向条形图：y 轴标签按实际宽度预留（最多 48pt，对应约 12~14 个英文字符），
-        # 超出的标签先截断，避免被画布裁切（之前 "BU2-Glider-System and Test" → "BU5-sV"）
+        # 超出的标签先截断，避免被画布裁切（此前超长部门名被裁成 "BU5-sV" 的问题）
         labels = [_shorten_label(x) for x in labels]
         chart = HorizontalBarChart()
         chart.x, chart.y = 92, 30

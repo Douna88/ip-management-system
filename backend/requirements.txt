@@ -1,0 +1,15 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+sqlalchemy>=2.0.0
+pydantic>=2.0.0
+python-jose[cryptography]>=3.3.0
+bcrypt>=4.0.0
+python-multipart>=0.0.9
+openpyxl>=3.1.0
+
+# 配置加载（backend/.env）
+python-dotenv>=1.0.0
+
+# 导出能力：PDF 与 PPT，缺了会导致导出接口 500
+reportlab>=4.0.0
+python-pptx>=0.6.23

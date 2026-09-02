@@ -1,0 +1,14 @@
+# 文本文件统一以 LF 存入仓库，检出时按平台自动转换
+* text=auto eol=lf
+
+# Windows 批处理脚本必须是 CRLF，否则 cmd.exe 解析错乱会闪退
+*.bat text eol=crlf
+
+# 二进制文件不参与换行转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pptx binary
+*.xlsx binary

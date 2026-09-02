@@ -1,44 +1,39 @@
-# 知识产权管理系统 · IP Management System
+# IP 管理系统 · IP / IPR Management System
 
-> 面向企业 IP 岗位的一体化资产台账：把散落在 Excel 里的专利、商标、年费缴纳与发明人奖金，收敛成一套结构化、可追溯、带 AI 助手与可视化导出的内部系统。
->
-> A full-stack internal platform for IP asset management — patents, trademarks, annuity (annual fee) tracking, and inventor bonus workflows, with an NL2SQL AI assistant and one-click reporting exports.
+> 一个面向企业知识产权（专利 / 商标 / 代理机构 / 奖金）全生命周期管理的 Web 系统。
+> A full-stack web system for managing intellectual property — patents, trademarks, agencies, and bonus accounting.
 
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)
-![Frontend](https://img.shields.io/badge/Frontend-Vue_3_+_Element_Plus-4FC08D?logo=vue.js&logoColor=white)
-![DB](https://img.shields.io/badge/DB-SQLite_(WAL)-003B57?logo=sqlite&logoColor=white)
-![AI](https://img.shields.io/badge/AI-NL2SQL_+_规则引擎-FF6F00?logo=openai&logoColor=white)
-![Export](https://img.shields.io/badge/Export-PPT_/_PDF_/_HTML-EA4C89)
-![License](https://img.shields.io/badge/License-MIT-blue)
+![Frontend](https://img.shields.io/badge/Frontend-Vue3_+_Element_Plus-4FC08D?logo=vue.js&logoColor=white)
+![DB](https://img.shields.io/badge/DB-SQLite-003B57?logo=sqlite&logoColor=white)
+![AI](https://img.shields.io/badge/AI-NL2SQL_+_ECharts-FF6F00?logo=openai&logoColor=white)
 
 ---
 
-## 📖 项目简介 · Overview
+## 项目简介 · Overview
 
-覆盖知识产权"**申请 → 授权 → 年费维持 → 发明人奖励**"的完整生命周期。
-系统支持多用户协作、数据看板、报表导出（**PPT / PDF / HTML**），并内置一个**中文自然语言 AI 助手**——直接用中文提问即可查数据、自动生成可视化图表。
+为知识产权部门打造的内部管理系统，覆盖从"专利/商标录入"到"年费提醒"再到"奖金核算与可视化"的完整业务流。
+系统支持多人协作、数据看板、报表导出（HTML / PDF / PPT），并内置一个自然语言 AI 助手——用中文提问即可查询数据、自动生成可视化图表。
 
-**核心亮点**：
+**核心亮点：**
 
-- **🏗️ 单进程一键部署**：前端（Vue 3）构建产物由后端（FastAPI）直接托管并带 SPA 兜底路由，团队访问一个地址即可使用，**无需 Nginx / 独立前端服务器，生产环境不需要 Node.js**。
-- **🤖 AI 助手（NL2SQL + 规则引擎）**：中文提问 → 自动生成 SQL → 执行 → 用自然语言回答并附结果表与 ECharts 图表；内置规则引擎命中高频问题时**秒级响应**，模型离线时仍可回答。
-- **💰 年费用自动计算与一键补写**：**：基于国知局公开阶梯标准（发明 20 / 实用新型 10 / 外观 15 年）+ 费减比例（85% / 70%）自动推算应缴金额与到期日，并审计漏写年份。**
-- **🔗 奖金↔专利三级名称匹配**：历史奖金常以"英文 + （中文）"混合记录，专利库对不上。系统实现**归一化 → 片段精确 → 双向包含**三级匹配，自动打通关联。
-- **📊 汇报材料导出**：看板图表一键导出 **PPT（原生图表）/ PDF（中文字体 + 矢量图）/ 自包含 HTML**，支持按模块筛选与 AI 分析页。
-- **🔐 安全与可追溯**：JWT 鉴权 + bcrypt 密码哈希；关键写操作落审计日志；敏感配置走环境变量，`.env` 不入库。
+- **单进程一键部署**：前端（Vue3）构建后由后端（FastAPI）直接托管，同事访问一个地址即可使用，无需 Nginx / 独立前端服务器。
+- **AI 助手**：基于本地大模型（OpenAI 兼容接口）的 NL2SQL，断网时自动回到内置规则引擎，常见问题秒级响应。
+- **可视化导出**：看板图表一键导出为 PDF / PPT（含图表），也支持自包含的 HTML 看板。
+- **数据安全**：SQLite WAL 模式 + 自动备份脚本；`.env` 密钥不入库。
 
 ---
 
-## 🛠 技术栈 · Tech Stack
+## 技术栈 · Tech Stack
 
 | 层 | 技术 |
 | --- | --- |
-| 后端 | Python · **FastAPI** · SQLAlchemy · Pydantic · SQLite (WAL) |
-| 前端 | Vue 3 · Vite · Element Plus · ECharts |
-| AI | 本地大模型（OpenAI 兼容 /chat/completions） + 正则规则引擎兜底 |
-| 导出 | python-pptx · reportlab · openpyxl · 内联 CSS HTML |
-| 安全 | bcrypt（密码） · JWT（鉴权） · 审计日志 |
-| 部署 | 单进程 uvicorn（静态资源 + SPA 兜底路由） |
+| **后端** | Python · **FastAPI** · SQLAlchemy · Pydantic · SQLite (WAL) |
+| **前端** | Vue 3 · Vite · Element Plus · ECharts |
+| **AI** | 本地大模型（OpenAI 兼容 /chat/completions） + 正则规则引擎兜底 |
+| **导出** | python-pptx · reportlab · openpyxl · 内联 CSS HTML |
+| **安全** | bcrypt（密码） · JWT（鉴权） · 审计日志 |
+| **部署** | 单进程 uvicorn（静态资源 + SPA 兜底路由） |
 
 ---
 
@@ -100,6 +95,11 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 | `admin` | `admin123` | 管理员 |
 | `demo` | `demo123` | 普通成员 |
 
+### 项目根目录还提供了一键启动脚本
+
+- `启动系统.bat`（Windows）：自动建 venv → 装依赖 → 生成数据 → 启动并打开浏览器
+- `start.sh`（macOS / Linux）：同上
+
 ### 前端开发模式（可选）
 
 ```bash
@@ -108,11 +108,6 @@ npm install
 npm run dev        # 默认 5173 端口，API 自动代理到后端
 npm run build      # 构建产物输出到 backend/static，供后端单进程托管
 ```
-
-### 项目根目录还提供了一键启动脚本
-
-- `启动系统.bat`（Windows）：自动建 venv → 装依赖 → 生成数据 → 启动并打开浏览器
-- `start.sh`（macOS / Linux）：同上
 
 ---
 
@@ -138,7 +133,7 @@ ip-system/
 
 ## ⚙️ 配置 · Configuration
 
-| 变量 | | 默认值 |
+| 变量 | 说明 | 默认值 |
 | --- | --- | --- |
 | `DATABASE_URL` | 数据库连接串 | `sqlite:///backend/ip_system.db` |
 | `SECRET_KEY` | JWT 签名密钥 | 首次启动自动生成并写入 `.env` |
@@ -153,11 +148,7 @@ ip-system/
 
 ## 📄 文档 · Documentation
 
-完整的需求说明 / 数据表设计 / 部署清单（含本系统的需求设计文档与脱敏开发过程）见仓库根目录 `docs/`：
-
-- `docs/01-IP管理系统-需求与设计文档.md`
-- `docs/03-数据表设计.md`
-- `docs/05-IT协调与资源申请清单.md`
+完整的需求说明 / 数据表设计 / 部署清单见仓库根目录 `docs/`。
 
 ---
 

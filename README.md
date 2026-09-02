@@ -1,18 +1,21 @@
-# IP 管理系统 · IP / IPR Management System
+# IP 管理系统 · IP Management System
 
-> 一个面向企业知识产权（专利 / 商标 / 代理机构 / 奖金）全生命周期管理的 Web 系统。
-> A full-stack web system for managing intellectual property — patents, trademarks, agencies, and bonus accounting.
+> 面向企业 IP 岗位的一体化资产台账：把散落在 Excel 里的专利、商标、年费缴纳与发明人奖金，收敛成一套结构化、可追溯、带 AI 助手与可视化导出的内部系统。
+>
+> A full-stack internal platform for IP asset management — patents, trademarks, annuity (annual fee) tracking, and inventor bonus workflows, with an NL2SQL AI assistant and one-click reporting exports.
 
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)
-![Frontend](https://img.shields.io/badge/Frontend-Vue3_+_Element_Plus-4FC08D?logo=vue.js&logoColor=white)
-![DB](https://img.shields.io/badge/DB-SQLite-003B57?logo=sqlite&logoColor=white)
-![AI](https://img.shields.io/badge/AI-NL2SQL_+_ECharts-FF6F00?logo=openai&logoColor=white)
+![Frontend](https://img.shields.io/badge/Frontend-Vue_3_+_Element_Plus-4FC08D?logo=vue.js&logoColor=white)
+![DB](https://img.shields.io/badge/DB-SQLite_(WAL)-003B57?logo=sqlite&logoColor=white)
+![AI](https://img.shields.io/badge/AI-NL2SQL_+_规则引擎-FF6F00?logo=openai&logoColor=white)
+![Export](https://img.shields.io/badge/Export-PPT_/_PDF_/_HTML-EA4C89)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 ---
 
 ## 项目简介 · Overview
 
-为知识产权部门打造的内部管理系统，覆盖从"专利/商标录入"到"年费提醒"再到"奖金核算与可视化"的完整业务流。
+为 IP 管理部门打造的内部管理系统，覆盖从"专利/商标录入"到"年费提醒"再到"奖金核算与可视化"的完整业务流。
 系统支持多人协作、数据看板、报表导出（HTML / PDF / PPT），并内置一个自然语言 AI 助手——用中文提问即可查询数据、自动生成可视化图表。
 
 **核心亮点：**

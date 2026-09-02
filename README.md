@@ -1,4 +1,4 @@
-# 知识产权管理系统 · IP Management System
+# IP管理系统 · IP Management System
 
 > 面向企业 IP 岗位的一体化资产台账：把散落在 Excel 里的专利、商标、年费缴纳与发明人奖金，收敛成一套结构化、可追溯、带 AI 助手与可视化导出的内部系统。
 >

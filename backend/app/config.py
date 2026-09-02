@@ -68,7 +68,7 @@ def resolve_upload_path(storage_path: str) -> Path:
     """把 file_storage.storage_path 解析为真实磁盘路径。
 
     兼容两种存储格式：
-      - 旧数据：存的是绝对路径（如 C:\\...\\uploads\\xxx.png），且该路径仍存在
+      - 旧数据：存的是绝对路径（如 旧版本曾存过完整磁盘路径
       - 新数据：只存文件名（相对 UPLOAD_DIR）
     优先按旧绝对路径查找，否则回落到 UPLOAD_DIR / storage_path。
     """
